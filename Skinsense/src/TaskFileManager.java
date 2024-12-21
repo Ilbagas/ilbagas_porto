@@ -19,7 +19,7 @@ public class TaskFileManager {
                     String namaProd = parts[0];
                     String brandProd= parts[1];
                     String kategoriProd = parts[3];
-                    double price = Double.parseDouble(parts[4]);
+                    int price = Integer.parseInt(parts[4]);
                     int stok = Integer.parseInt(parts[5]);
 
 

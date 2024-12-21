@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+
+
 import java.util.ArrayList;
 
 public class crudCon {
@@ -44,7 +46,7 @@ public class crudCon {
                 namaProdField.getText(), 
                 brandProdField.getText(), 
                 kategoriField.getText(), 
-                Double.parseDouble(hargaField.getText()), 
+                Integer.parseInt(hargaField.getText()), 
                 Integer.parseInt(jumlahField.getText()));
             
             taskList.add(task);
@@ -79,6 +81,35 @@ public class crudCon {
         }
 
     }
+    
+    @FXML
+    private void updateData(){
+        try {
+            ProductTask selected = AllTable.getSelectionModel().getSelectedItem();
+            if (selected == null) {
+                throw new TaskNotSelectedException("Mohon pilih data yang ingin anda rubah!");
+            }
+            if(namaProdField.getText().isEmpty()  || brandProdField.getText().isEmpty()
+            || kategoriField.getText().isEmpty() || hargaField.getText().isEmpty() || jumlahField.getText().isEmpty()){
+                throw new MissingFieldException("Data anda kosong tolong masukkan data anda terlebih dahulu!");
+            }
+            selected.setNamaProd(namaProdField.getText());
+            selected.setBrandProd(brandProdField.getText());
+            selected.setKategori(brandProdField.getText());
+            selected.setPrice(Integer.parseInt(hargaField.getText()));
+            selected.setStok(Integer.parseInt(jumlahField.getText()));
+
+            TaskFileManager.saveTasks(new ArrayList<>(taskList));
+            AllTable.refresh();
+        } catch (MissingFieldException e){
+            showError(e.getMessage());
+        } catch (NumberFormatException e){
+            showError("Harga dan jumlah harus berupa angka.");
+        } catch (TaskNotSelectedException e){
+            showError(e.getMessage());
+        }
+    }
+    
 
     private void showError(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR, message, ButtonType.OK);

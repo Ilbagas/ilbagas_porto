@@ -16,7 +16,7 @@
           <TableColumn fx:id="brandCol" prefWidth="93.5999755859375" text="Brand Produk" />
             <TableColumn fx:id="categoriCol" prefWidth="75.0" text="Kategori" />
             <TableColumn fx:id="priceCol" prefWidth="75.0" text="Harga" />
-            <TableColumn fx:id="stokCol" prefWidth="75.0" text="Stok" />
+            <TableColumn fx:id="stokCol" prefWidth="75.0" text="Qty" />
         </columns>
       </TableView>
    </center>
@@ -43,7 +43,7 @@
                   <Font name="Geometr706 BlkCn BT Black" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="jumlahField" alignment="CENTER" layoutX="25.0" layoutY="249.0" prefHeight="23.0" prefWidth="152.0" promptText="Jumlah Stok">
+            <TextField fx:id="jumlahField" alignment="CENTER" layoutX="25.0" layoutY="249.0" prefHeight="23.0" prefWidth="152.0" promptText="Stok">
                <font>
                   <Font name="Geometr706 BlkCn BT Black" size="12.0" />
                </font>
@@ -53,17 +53,17 @@
                   <Font name="Geometr415 Blk BT Black" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="hapusButton" layoutX="125.0" layoutY="296.0" mnemonicParsing="false" style="-fx-background-color: fb629e; -fx-background-radius: FFFFFF; -fx-background-insets: FFFFFF;" text="Hapus" textAlignment="CENTER" textFill="WHITE" onAction="#deleteData">
+            <Button fx:id="hapusButton" layoutX="125.0" layoutY="296.0" mnemonicParsing="false" onAction="#deleteData" style="-fx-background-color: fb629e; -fx-background-radius: FFFFFF; -fx-background-insets: FFFFFF;" text="Hapus" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Geometr415 Blk BT Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="72.0" layoutY="336.0" mnemonicParsing="false" style="-fx-background-color: fb629e; -fx-background-radius: FFFFFF; -fx-background-insets: FFFFFF;" text="Update" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="UpdateButtons" layoutX="72.0" layoutY="336.0" mnemonicParsing="false" onAction="#updateData" style="-fx-background-color: fb629e; -fx-background-radius: FFFFFF; -fx-background-insets: FFFFFF;" text="Update" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Geometr415 Blk BT Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="125.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: fb629e;" text="LogOut" textFill="WHITE">
+            <Button fx:id="LogOutButton" layoutX="125.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: fb629e;" text="LogOut" textFill="WHITE"  >
                <font>
                   <Font name="Geometr212 BkCn BT Heavy" size="12.0" />
                </font>

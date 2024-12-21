@@ -26,7 +26,7 @@ public class loginCon {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.equals("admin") && password.equals("1234")) {
+        if (username.equals("admin") && password.equals("1111")) {
             try {
                
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("CRUD.fxml"));
