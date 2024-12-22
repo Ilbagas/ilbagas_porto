@@ -3,7 +3,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 
 import java.util.ArrayList;
@@ -15,7 +19,7 @@ public class crudCon {
     @FXML
     private TableColumn<ProductTask, String> nameCol, brandCol, categoriCol;
     @FXML
-    private TableColumn<ProductTask, Double> priceCol;
+    private TableColumn<ProductTask, Integer> priceCol;
     @FXML
     private TableColumn<ProductTask, Integer> stokCol;
     @FXML
@@ -107,6 +111,22 @@ public class crudCon {
             showError("Harga dan jumlah harus berupa angka.");
         } catch (TaskNotSelectedException e){
             showError(e.getMessage());
+        }
+    }
+
+    @FXML
+    private void logOut(){
+        Stage stage = (Stage) AllTable.getScene().getWindow();
+        stage.close();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("loginForm.fxml"));
+            Parent root = loader.load();    
+            Stage loginStage = new Stage();
+            loginStage.setTitle("Login Form");
+            loginStage.setScene(new Scene(root));
+            loginStage.show();
+        } catch (IOException e) {
+            showError("Gagal untuk logOut dari aplikasi !");
         }
     }
     

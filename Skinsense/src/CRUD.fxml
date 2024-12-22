@@ -63,7 +63,7 @@
                   <Font name="Geometr415 Blk BT Black" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="LogOutButton" layoutX="125.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: fb629e;" text="LogOut" textFill="WHITE"  >
+            <Button fx:id="LogOutButton" layoutX="125.0" layoutY="23.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: fb629e;" text="LogOut" textFill="WHITE">
                <font>
                   <Font name="Geometr212 BkCn BT Heavy" size="12.0" />
                </font>
