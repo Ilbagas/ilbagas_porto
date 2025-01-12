@@ -1,47 +1,34 @@
-public class ProductTask {
-    private String namaProd,brandProd,kategoriProd;
-    private int stok;
-    private int price;
+public class ProductTask extends Product {
+    private String brandProd;
+    private String kategoriProd;
 
-    public ProductTask(String namaProd, String brandProd, String kategoriProd, int price, int stok){
-        this.namaProd = namaProd;
+    // Konstruktor default (untuk kompatibilitas dengan kode lain)
+    public ProductTask() {
+        super("", 0, 0);  // Memanggil konstruktor Product dengan nilai default
+        this.brandProd = "";
+        this.kategoriProd = "";
+    }
+
+    // Konstruktor dengan parameter
+    public ProductTask(String namaProd, String brandProd, String kategoriProd, int price, int stok) {
+        super(namaProd, price, stok);  // Memanggil konstruktor Product
         this.brandProd = brandProd;
         this.kategoriProd = kategoriProd;
-        this.price = price;
-        this.stok = stok;
-    }
-    public String getNamaProd() {
-        return namaProd;
     }
 
     public String getBrandProd() {
         return brandProd;
     }
 
+    public void setBrandProd(String brandProd) {
+        this.brandProd = brandProd;
+    }
+
     public String getKategoriProd() {
         return kategoriProd;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public int getStok() {
-        return stok;
-    }
-    public void setNamaProd(String namaProd) {
-        this.namaProd = namaProd;
-    }
-    public void setBrandProd(String brandProd) {
-        this.brandProd = brandProd;
-    }
-    public void setKategori(String kategori){
-        this.kategoriProd = kategori;
-    }
-    public void setPrice(int price) {
-        this.price = price;
-    }
-    public void setStok(int stok) {
-        this.stok = stok;
+    public void setKategoriProd(String kategoriProd) {
+        this.kategoriProd = kategoriProd;
     }
 }
