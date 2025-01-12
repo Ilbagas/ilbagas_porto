@@ -12,7 +12,7 @@ public class MainAPP extends Application {
         mainStage = primaryStage;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("loginForm.fxml"));
         Parent root = loader.load();
-        primaryStage.setTitle("1 - 800 hot n fun");
+        primaryStage.setTitle("Login Form");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
